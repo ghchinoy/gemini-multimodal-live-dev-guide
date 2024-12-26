@@ -51,9 +51,14 @@
     import { statusHandler } from './status-handler.js';
 
     console.log('Script started, setting up WebSocket...');
-    const apiKey = '<YOUR_API_KEY>';
+    // ML Dev
+    const apiKey = 'AIzaSyB9nVVKsdx_HKOjEcs4wjaTw2uXu2Oq0aM';
     const host = 'generativelanguage.googleapis.com';
     const endpoint = `wss://${host}/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=${apiKey}`;
+    
+    // Vertex AI
+    //const host = 'us-central1-autopush-aiplatform.sandbox.googleapis.com'
+    //const endpoint = `wss://${host}/ws/google.cloud.aiplatform.v1beta1.LlmBidiService/BidiGenerateContent`;
 
     const ws = new WebSocket(endpoint);
     let audioContext;
@@ -294,7 +299,7 @@
             speech_config: {
               voice_config: {
                 prebuilt_voice_config: {
-                  voice_name: "Aoede"
+                  voice_name: "Aoede" // Zephyr, Puck, Charon, Kore, Fenrir, Leda, Orus, Aoede
                 }
               }
             }

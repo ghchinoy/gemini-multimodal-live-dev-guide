@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const OPENWEATHER_API_KEY = '<YOUR_API_KEY>'; // Replace with actual key
+const OPENWEATHER_API_KEY = '49ed49a55e3fd9d35b379fae13d8d38f'; // Replace with actual key
 
 export async function getWeather(city) {
   try {
@@ -36,7 +36,7 @@ export async function getWeather(city) {
     const { lat, lon } = geoData[0];
 
     // Then get weather data
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OPENWEATHER_API_KEY}`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${OPENWEATHER_API_KEY}`;
     console.log('Fetching weather data from:', weatherUrl);
     const weatherResponse = await fetch(weatherUrl);
     if (!weatherResponse.ok) {
@@ -50,7 +50,7 @@ export async function getWeather(city) {
       humidity: weatherData.main.humidity,
       windSpeed: weatherData.wind.speed,
       city: weatherData.name,
-      country: weatherData.sys.country
+      country: weatherData.sys.country,
     };
   } catch (error) {
     console.error('Detailed error:', {

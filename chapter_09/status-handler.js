@@ -27,6 +27,7 @@ class StatusHandler {
       const timestamp = new Date().toLocaleTimeString();
       const paramsString = JSON.stringify(params, null, 2);
       functionInfo.textContent = `[${timestamp}] Function: ${functionName}\nParameters: ${paramsString}`;
+      console.log(`updating: [${timestamp}] Function: ${functionName}\nParameters: ${paramsString}`);
     }
   }
 }
