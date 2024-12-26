@@ -55,9 +55,9 @@ body {
   top: 100px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 100px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   z-index: 100;
   background: rgba(128, 128, 128, 0.2);
@@ -70,7 +70,7 @@ video {
   height: auto;
   min-width: 320px;
   min-height: 240px;
-  object-fit: contain;
+  object-fit: cover;
   background: #000;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
