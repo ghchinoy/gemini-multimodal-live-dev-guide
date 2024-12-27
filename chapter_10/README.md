@@ -40,7 +40,8 @@ This will start a gemini multimodal live proxy server on port 8080.
 In the this directory, in another terminal, start a webserver.
 
 The index.html's javscript has been modified to:
-* point to the proxy server ws://localhost:8080 as the websocket server (see line 38)
+
+* point to the proxy server ws://localhost:8080 as the websocket server (see line 40)
 * handles the tool responses to change the function panel
 
 
