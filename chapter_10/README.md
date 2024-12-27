@@ -45,11 +45,41 @@ The index.html's javscript has been modified to:
 * handles the tool responses to change the function panel
 
 
+## Deploy to Cloud Run
+
+For the proxy service:
+
+```
+cd gemini-ws-proxy
+gcloud run deploy gemini-ws-proxy --source . --allow-unauthenticated
+```
+
+For the front end webapp:
+
+* Substitute in the Cloud Run deploy service endpoint from the deployment step on line 40. Note that the endpoint should be `wss://` since Cloud Run will provide a SSL secured service.
+
+```
+gcloud run deploy gemini-multimodal-live --source . --allow-unauthenticated
+
+# or, if you want to use the Cloud Run preview with IAP protection
+# gcloud alpha run deploy gemini-multimodal-live --source . --iap
+
+```
+
+
+
+
 
 # What we did
-```
-mkdir gemini-ws-proxy
-cd gemini-ws-proxy
-npm init -y
-```
 
+* Created a Gemini Multimodal Live WebSocket proxy service.
+
+    ```
+    mkdir gemini-ws-proxy
+    cd gemini-ws-proxy
+    npm init -y
+    ```
+
+* Added a favicon to the webapp
+
+* Modified the webapp to handle tool_responses to update the metadata panel
