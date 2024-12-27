@@ -6,8 +6,7 @@ const apiKey = process.env.GEMINI_API_KEY;
 const host = 'generativelanguage.googleapis.com';
 const endpoint = `wss://${host}/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=${apiKey}`;
 const proxyPort = 8080; // Port the proxy server will listen on
-//const targetPort = 80; // Replace with the actual target WebSocket server port
-//const targetPath = '/';
+
 console.log(`proxying for ${endpoint}`)
 
 // Create the proxy WebSocket server
