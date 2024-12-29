@@ -13,7 +13,7 @@ if (apiKey) { // ML Dev
     host = 'generativelanguage.googleapis.com';
     endpoint = `wss://${host}/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=${apiKey}`;
 } else { // Vertex AI
-    host = 'us-central1-autopush-aiplatform.sandbox.googleapis.com';
+    host = process.env.VERTEX_AI_HOST || 'us-central1-aiplatform.sandbox.googleapis.com';
     endpoint = `wss://${host}/ws/google.cloud.aiplatform.v1beta1.LlmBidiService/BidiGenerateContent`;
 }
 

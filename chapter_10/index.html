@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gemini Audio-to-Audio WebSocket Demo</title>
+  <title>Gemini Multimodal Live</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -37,7 +37,7 @@
     import { statusHandler } from './status-handler.js';
 
     console.log('Script started, setting up WebSocket...');
-    const endpoint = `ws://localhost:8080`
+    const endpoint = `ws://localhost:8080`;
 
     const ws = new WebSocket(endpoint);
     let audioContext;
